@@ -1,13 +1,21 @@
-require 'sinatra/application'
-require './lib/game'
+require 'sinatra'
 
 # Why is it a good idea to wrap our App class in a module?
-module Game
-  class RPS_App < Sinatra::Application
-    get '/' do
-      @game = Game.new
-			erb :game
-    end
+class RPS_App < Sinatra::Application
 
+		get '/throw/' do
+			erb :throw 
+  	end 
+  	
+  	get '/throw/:type' do
+  	
+  	computer = ["rock", "paper", "scissor"].sample
+  	"You chose #{params[:type]} and computer chooses #{computer}."
+
+  	if computer == "#{params[:type]}"
+  		"Draw"
+  	else 
+  		"You lose"
+  	end 
   end
 end

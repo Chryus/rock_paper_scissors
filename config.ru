@@ -1,2 +1,2 @@
 require './app'
-run Game::RPS_App.new
+run RPS_App.new
