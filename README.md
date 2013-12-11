@@ -1,4 +1,4 @@
 rock_paper_scissors
 ===================
+<<<<<<< HEAD
 
-rock paper scissors using sinatra!

@@ -5,6 +5,10 @@ require 'sinatra'
 # Why is it a good idea to wrap our App class in a module?
 class RPS_App < Sinatra::Application
   	
+  	get '/throw' do
+  		erb:index
+  	end
+
   	get '/throw/:type' do
   		@game = Game.new("#{params[:type]}")
   		@message = @game.message
